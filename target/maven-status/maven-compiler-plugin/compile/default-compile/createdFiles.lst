@@ -1,0 +1,3 @@
+org/inventario/model/equipoinformatico.class
+org/inventario/rest/equipoinformaticoEndpoint.class
+org/inventario/rest/RestApplication.class

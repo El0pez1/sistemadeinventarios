@@ -1,0 +1,72 @@
+<header ng-switch on="$location.path().indexOf('/equipoinformaticos/new') > -1">
+    <h3 ng-switch-when="true">Create a new equipoinformatico</h3>
+    <h3 ng-switch-when="false">View or edit equipoinformatico</h3>
+</header>
+<form id="equipoinformaticoForm" name="equipoinformaticoForm" class="form-horizontal" role="form">
+    
+
+    <div class="form-group" ng-class="{'has-error': equipoinformaticoForm.numerodeserie.$invalid}">
+        <label for="numerodeserie" class="col-sm-2 control-label">Numerodeserie</label>
+        <div id="numerodeserieControls" class="col-sm-10">
+            <input id="numerodeserie" name="numerodeserie" type="text" class="form-control" ng-model="equipoinformatico.numerodeserie" placeholder="Enter the equipoinformatico Numerodeserie"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': equipoinformaticoForm.marca.$invalid}">
+        <label for="marca" class="col-sm-2 control-label">Marca</label>
+        <div id="marcaControls" class="col-sm-10">
+            <input id="marca" name="marca" type="text" class="form-control" ng-model="equipoinformatico.marca" placeholder="Enter the equipoinformatico Marca"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': equipoinformaticoForm.color.$invalid}">
+        <label for="color" class="col-sm-2 control-label">Color</label>
+        <div id="colorControls" class="col-sm-10">
+            <input id="color" name="color" type="text" class="form-control" ng-model="equipoinformatico.color" placeholder="Enter the equipoinformatico Color"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': equipoinformaticoForm.status.$invalid}">
+        <label for="status" class="col-sm-2 control-label">Status</label>
+        <div id="statusControls" class="col-sm-10">
+            <input id="status" name="status" type="text" class="form-control" ng-model="equipoinformatico.status" placeholder="Enter the equipoinformatico Status"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': equipoinformaticoForm.modelo.$invalid}">
+        <label for="modelo" class="col-sm-2 control-label">Modelo</label>
+        <div id="modeloControls" class="col-sm-10">
+            <input id="modelo" name="modelo" type="text" class="form-control" ng-model="equipoinformatico.modelo" placeholder="Enter the equipoinformatico Modelo"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': equipoinformaticoForm.interfaz.$invalid}">
+        <label for="interfaz" class="col-sm-2 control-label">Interfaz</label>
+        <div id="interfazControls" class="col-sm-10">
+            <input id="interfaz" name="interfaz" type="text" class="form-control" ng-model="equipoinformatico.interfaz" placeholder="Enter the equipoinformatico Interfaz"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': equipoinformaticoForm.fechamantenimiento.$invalid}">
+        <label for="fechamantenimiento" class="col-sm-2 control-label">Fechamantenimiento</label>
+        <div id="fechamantenimientoControls" class="col-sm-10">
+            <input id="fechamantenimiento" name="fechamantenimiento" type="text" class="form-control" ng-model="equipoinformatico.fechamantenimiento" placeholder="Enter the equipoinformatico Fechamantenimiento"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': equipoinformaticoForm.observaciones.$invalid}">
+        <label for="observaciones" class="col-sm-2 control-label">Observaciones</label>
+        <div id="observacionesControls" class="col-sm-10">
+            <input id="observaciones" name="observaciones" type="text" class="form-control" ng-model="equipoinformatico.observaciones" placeholder="Enter the equipoinformatico Observaciones"></input>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="saveequipoinformatico" name="saveequipoinformatico" class="btn btn-primary" ng-disabled="isClean() || equipoinformaticoForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
+            <button id="deleteequipoinformatico" name="deleteequipoinformatico" class="btn btn-danger" ng-show="equipoinformatico.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+        </div>
+    </div>
+</form>
